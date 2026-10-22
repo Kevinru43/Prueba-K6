@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { check, sleep } from 'k6';
 
 export const options = {
     stages: [
@@ -12,6 +12,7 @@ export const options = {
 
 
 export default function() {
-    http.get('https://blazedemo.com/');
+    const respuesta = http.get('https://blazedemo.com/');
+    check(respuesta, { 'La pagina se cargo correctamente: status 200': (r) => r.status == 200})
     sleep(1);
 }
