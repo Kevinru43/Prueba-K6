@@ -16,5 +16,6 @@ export default function() {
     check(respuesta, { 'La pagina se cargo correctamente: status 200': (r) => r.status == 200})
     check(respuesta, { 'Validando texto de la pagina: OK': (r) => r.body.includes('Welcome to the Simple Travel Agency!')}),
     check(respuesta, { 'Validando subtítulo: OK': (r) => r.body.includes('The is a sample site you can test with BlazeMeter!')}),
+    check(respuesta, { 'Validando tamaño': (r) => r.body.length < 11300})
     sleep(1);
 }
