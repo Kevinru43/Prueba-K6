@@ -14,5 +14,7 @@ export const options = {
 export default function() {
     const respuesta = http.get('https://blazedemo.com/');
     check(respuesta, { 'La pagina se cargo correctamente: status 200': (r) => r.status == 200})
+    check(respuesta, { 'Validando texto de la pagina: OK': (r) => r.body.includes('Welcome to the Simple Travel Agency!')}),
+    check(respuesta, { 'Validando subtítulo: OK': (r) => r.body.includes('The is a sample site you can test with BlazeMeter!')}),
     sleep(1);
 }
