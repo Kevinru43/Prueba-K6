@@ -17,5 +17,9 @@ export default function() {
     check(respuesta, { 'Validando texto de la pagina: OK': (r) => r.body.includes('Welcome to the Simple Travel Agency!')}),
     check(respuesta, { 'Validando subtítulo: OK': (r) => r.body.includes('The is a sample site you can test with BlazeMeter!')}),
     check(respuesta, { 'Validando tamaño': (r) => r.body.length < 11300})
+
+    console.log("Tipos de respuesta")
+    console.log("Response Url" + String(respuesta.request.url))
+    console.log("Response método de respuesta" + String(respuesta.request.method))
     sleep(1);
 }
