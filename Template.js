@@ -21,5 +21,7 @@ export default function() {
     console.log("Tipos de respuesta")
     console.log("Response Url" + String(respuesta.request.url))
     console.log("Response método de respuesta" + String(respuesta.request.method))
+    console.log("Response método de status" + String(respuesta.status))
+    console.log("Response método de status_text" + String(respuesta.status_text))
     sleep(1);
 }
