@@ -23,5 +23,9 @@ export default function() {
     console.log("Response método de respuesta" + String(respuesta.request.method))
     console.log("Response método de status" + String(respuesta.status))
     console.log("Response método de status_text" + String(respuesta.status_text))
+    console.log("Response método de Http Sending" + String(respuesta.timings.sending))
+    console.log("Response método de Http Waiting" + String(respuesta.timings.waiting))
+    console.log("Response método de Http Receiving" + String(respuesta.timings.receiving))
+
     sleep(1);
 }
